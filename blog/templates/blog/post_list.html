@@ -5,6 +5,15 @@
             <title>Bartka strona</title>
         </head>
 <body>
-<h1>Witam!</h1>
+    <div>
+        <h1>Witam!</h1>
+    </div>
+    <div>
+        {% for post in posts %}
+    </div>
+    <div>
+        <p> opublikowany: {{post.publish_date}}</p>
+    </div>
+    {% endfor %}
 </body>
 </html>
