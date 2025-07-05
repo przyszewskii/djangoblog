@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-    <html lang="pl">
-        <head>
-            <meta charset="UTF-8">
-            <title>Bartka strona</title>
-        </head>
-<body>
-    <div>
-        <h1>Witam!</h1>
-    </div>
-    <div>
+    {% extends 'blog/base.html' %}
+    {% block content %}
         {% for post in posts %}
-    </div>
-    <div>
-        <p> opublikowany: {{post.publish_date}}</p>
-    </div>
-    {% endfor %}
-</body>
-</html>
+        <div class = 'post'>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <div class="data">
+            <p> opublikowany: {{post.publish_date}}</p>
+            </div>
+        <em>{{ post.text|linebreaksbr }}</em>
+        </div>
+        {% endfor %}
+    {% endblock %}
