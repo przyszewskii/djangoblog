@@ -6,6 +6,7 @@
             <div class="data">
             <p> opublikowany: {{post.publish_date}}</p>
             </div>
+            <img src="{{ post.image.url }}" alt="Obrazek" width="250">
         <em>{{ post.text|linebreaksbr }}</em>
         </div>
         {% endfor %}
